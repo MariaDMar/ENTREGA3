@@ -1,74 +1,91 @@
 <?xml version="1.0" encoding="utf-8"?>
 
 <!-- organizar los componentes de la aplicación -->
-<LinearLayout android:layout_width="match_parent"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical"
-    xmlns:android="http://schemas.android.com/apk/res/android"
     android:background="#206abf"
-    android:gravity="center_horizontal">
+    android:gravity="center_horizontal"
+    android:orientation="vertical">
 
     <!-- Aqui van los componentes/ wrap es para que la altura se acomode al texto -->
     <!-- Utilizo sp para texto y dp para las demás dimensiones -->
     <!-- si pongo en width wrap se adapta al ancho del texto -->
 
-    <EditText
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:hint="Masa"
-        android:textColorHint="#b6b6ad"
-        android:id="@+id/et_masa"
-        android:layout_marginLeft="25dp"
-        android:layout_marginRight="20dp"
-        android:background="@drawable/boton"
-        android:padding="10dp"
-        android:layout_marginBottom="10dp"
-        android:layout_marginTop="10dp"
-        />
+    <ImageView
+        android:id="@+id/imageView"
+        android:layout_width="332dp"
+        android:layout_height="103dp"
+        android:src="@drawable/icesi" />
 
     <EditText
+        android:id="@+id/et_masa"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:hint="Altura"
-        android:textColorHint="#b6b6ad"
+        android:layout_marginBottom="10dp"
+        android:layout_marginLeft="25dp"
+        android:layout_marginRight="20dp"
+        android:layout_marginTop="10dp"
+        android:background="@drawable/boton"
+        android:hint="Masa"
+        android:padding="10dp"
+        android:textColorHint="#ffffff" />
+
+    <EditText
         android:id="@+id/et_altura"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
         android:layout_marginLeft="25dp"
         android:layout_marginRight="20dp"
         android:background="@drawable/boton"
+        android:hint="Altura"
         android:padding="10dp"
-        />
+        android:textColorHint="#ffffff" />
 
     <TextView
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="Introduce los daros para calcular tu IMC"
-        android:textSize="15sp"
-        android:padding="10dp"
-        android:layout_margin="10dp"
-        android:gravity="center"
-        android:textColor="#FFFFFF"
         android:id="@+id/tv_imc"
-        />
+        android:layout_width="348dp"
+        android:layout_height="wrap_content"
+        android:layout_margin="10dp"
+        android:layout_marginTop="40dp"
+        android:gravity="center"
+        android:padding="10dp"
+        android:text="Introduce los datos para calcular tu IMC"
+        android:textColor="#FFFFFF"
+        android:textSize="15sp" />
 
     <Button
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="CALCULAR"
-        android:textColor="#FFFFFF"
-        android:background="@drawable/boton"
         android:id="@+id/btn_calcular"
-        />
+        android:layout_width="326dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="0dp"
+        android:background="@drawable/boton"
+        android:baselineAligned="false"
+        android:text="CALCULAR"
+        android:textColor="#FFFFFF" />
+
 
     <TextView
+        android:id="@+id/imc"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Tu IMC es"
-        android:textSize="15sp"
-        android:padding="10dp"
         android:layout_margin="10dp"
         android:gravity="center"
+        android:padding="10dp"
+        android:text="Tu IMC es"
         android:textColor="#FFFFFF"
+        android:textSize="15sp" />
+
+    <TextView
         android:id="@+id/tv_resultado"
-        />
+        android:layout_width="139dp"
+        android:layout_height="49dp"
+        android:layout_marginLeft="25dp"
+        android:layout_marginRight="20dp"
+        android:background="@drawable/boton"
+        android:baselineAligned="false"
+        android:textColor="#FFFFFF"
+        android:textSize="15sp" />
 
 </LinearLayout>

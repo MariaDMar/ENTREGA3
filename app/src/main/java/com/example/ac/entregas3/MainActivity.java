@@ -18,13 +18,10 @@ public class MainActivity extends AppCompatActivity {
     TextView tv_imc;
     Button btn_calcular;
     TextView tv_resultado;
-    String nombreUsuario;
-    private EditText edtUserName;
 
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        nombreUsuario = "NA";
 
         et_masa = findViewById(R.id.et_masa);
         et_altura = findViewById(R.id.et_altura);
@@ -36,22 +33,18 @@ public class MainActivity extends AppCompatActivity {
         btn_calcular.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                String masa = et_masa.getText().toString();
-                int a = Integer.parseInt(masa);
-                //tv_imc.setText("Hola "+masa);
-                double newA = Math.pow(a, 2);
-                tv_resultado.setText("Hola " + newA);
 
-                Toast.makeText(MainActivity.this, "Hola "+ newA, Toast.LENGTH_SHORT).show();
+                int masa = Integer.parseInt(et_masa.getText().toString());
+                int altura = Integer.parseInt(et_altura.getText().toString());
+
+                double resultado = masa/Math.pow(altura,2);
+                String resultadoString = Double.toString(resultado);
+
+                tv_resultado.setText(resultadoString);
+
+                //tv_imc.setText("Hola "+masa);
+
             }
         });
-    }
-
-    public void onClick(View view){
-        Intent intento = new Intent(getApplicationContext(), Menu.class);
-        nombreUsuario = edtUserName.getText().toString();
-        intento.putExtra("usuario", nombreUsuario);
-        startActivity(intento);
-
     }
 }
